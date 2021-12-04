@@ -1,0 +1,509 @@
+/*
+Style Name: FIP 
+Description: FIP for Matthew Tenuta
+Author: Matthew Tenuta 
+Version: 1.0
+https://www.youtube.com/watch?v=dQw4w9WgXcQ
+*/
+
+/*--------------------------------------------------------------
+Accessibility
+--------------------------------------------------------------*/
+
+/* Text meant only for screen readers */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar */
+}
+
+/* -------------
+  Fonts
+-------------- */
+
+/* ------------ */
+
+/* -------------
+  Plugins
+-------------*/
+
+/* -------------
+  Reset
+-------------*/
+
+body {
+   margin: 0;
+   padding: 0;
+   color: rgb(60, 60, 60);
+}
+
+/* ___________________________________________
+
+       CSS Guide
+___________________________________________ */
+
+/* 01. General Styles
+      -Floats                        
+   02. CSS Grid
+   03. Site Header
+   04. Images
+   05. Gallery                       
+ 
+/* _____________________________________
+
+   01. General Styles
+   _____________________________________ */
+
+   .hidden {
+       display: none;
+   }
+
+   .box-model {
+      margin: 1rem;
+      padding: 1rem;
+      background: rgb(200, 200, 200);
+   }
+
+   .background {
+      background-color: rgb(227, 251, 255);
+   }
+
+   section {
+      margin: 3rem 0;
+   }
+
+   .border-top {
+      border-top:1px solid #00aeef;
+      padding-top: 1.5em;
+   }
+
+   .border-bottom {
+      margin-left: auto;
+      margin-right: auto;
+      border-bottom:1px solid #00aeef;
+      padding-bottom: .5em;
+   }
+
+   .font {
+      font-family: arial;
+   }
+
+   .paragraph {
+      font-size: 18px;
+      line-height: 1.4;
+   }
+
+   .line-page {
+      border-bottom: 3px solid #00aeef;
+      padding: 1.5em;
+      grid-column: 1/ span 4;
+   }
+
+   .pad {
+      padding: 2em;
+   }
+
+   .pad_2 {
+      padding: 1em;
+   }
+
+   .margin_negative {
+      margin: -2em;
+   }
+
+   .size_2 {
+      font-size: 1.2em;
+   }
+
+   .size_3 {
+      font-size: 1.5em;
+   }
+
+   .size_4 {
+      font-size: 1.8em;
+   }
+
+   input, textarea {
+      padding: 1em;
+      margin: .5em;
+   }
+
+   .size_2 {
+      font-size: 1.3em;
+   }
+
+   .size_3 {
+      font-size: 1.2em;
+   }
+
+   .spacing {
+      line-height: 1.4em;
+   }
+
+   .oldNewText {
+      margin-left: 4.3em;
+   }
+
+   /*------------ Floats ------------*/
+
+   .f-left {
+      float: left;
+   }
+
+   .f-right {
+      float: right;
+   }
+
+   /*------------ End Floats ------------*/
+
+/* _____________________________________
+
+   02. CSS Grid
+   _____________________________________ */
+
+   @supports (grid-area: auto) {
+
+      .site {
+         max-width: none;
+      }
+
+      /*------------ Grid Items ------------*/
+
+      .head, .main > *, .foot {
+         display: grid;
+			grid-template-columns: 1fr repeat(2, minmax(auto, 30em)) 1fr;
+      }
+
+      .one-item {
+         display: grid;
+         grid-column: 2 / span 2;
+         grid-template-columns: 1fr;
+      }
+
+      .one-item-foot {
+         display: grid;
+         grid-column: 1 / span 4;
+         grid-template-columns: 1fr;
+      }
+
+      .two-items {
+         display: grid;
+         grid-column: 2 / span 2;
+         grid-template-columns: repeat(2, 1fr);
+         justify-content: space-evenly;
+      }
+
+      .two-items textarea {
+         grid-column: 1 / span 2;
+      }
+
+      .three-items {
+         display: grid;
+         grid-column: 2 / span 2;
+         grid-template-columns: repeat(3, 1fr);
+         justify-content: space-evenly;
+         row-gap: 2em;
+         column-gap: 2em;
+      }
+
+      .seven-items {
+         display: grid;
+         grid-column: 1 / span 6;
+         grid-template-columns: repeat(7, 1fr);
+         justify-content: space-evenly;
+      }
+
+
+
+      /*------------ End Grid Items ------------*/
+
+      /*------------- Start Hero ------------*/
+
+      .hero {
+         margin: 0 0;
+      }
+
+      .hero-img img {
+         width: 100%;
+      }
+
+      .hero-img {
+         display: grid;
+         grid-column: span 4;
+         margin-bottom: 1rem;
+      }
+
+      .hero-img > * {
+         grid-column: 1;
+         grid-row: 1;
+      }
+
+      .hero-img h2.left {
+         align-self: flex-end;
+         justify-self: start;
+         margin-left: 9em;
+      }
+
+      .hero-img h2.right {
+         align-self: flex-end;
+         justify-self: end;
+         margin-right: 9em;
+      }
+
+      /*------------ End Hero ------------*/
+   }
+
+   /* _____________________________________
+
+   03. Site Header
+   _____________________________________ */
+
+
+    header {
+      position: relative;
+      top: 0em;
+      background-color: #fff;
+      border-bottom: 1px solid #e6e6e6;
+      box-shadow: 0px 5px 8px #888;
+   }   
+   
+   .logo {
+         grid-column: 1 / span 1;
+         padding: 1em;
+      }
+
+      .logo img {
+         padding: 1em;
+         width: 50%;
+      }
+
+      .title-center {
+         margin: auto;
+         padding: 1rem;
+         background: rgb(223, 223, 223);
+         border-radius: 20px;
+         align-self: center;
+         text-align: center;
+      }
+
+      /*------------ Start Nav Styling ------------*/
+
+      .nav {
+         grid-column: 2 / span 3;
+      }
+
+      nav ul {
+         margin: 3em 0 0 0;
+         padding: 0em;
+         text-decoration: none;
+         text-align: center;
+      }
+
+      nav li {
+         display: inline;
+         margin-right: 5em;
+      }
+
+      nav li a {
+         text-decoration: none;
+         color: #626262;
+         font-size: inherit;
+      }
+
+      nav li a:hover {
+         padding-bottom: .5em;
+         border-bottom: 3px solid #00aeef;
+      }
+
+      nav li a.active {
+         padding-bottom: .5em;
+         border-bottom: 3px solid #00aeef;
+      }
+
+      .size {
+         font-size: 3em;
+      }
+
+      .nav_foot_text {
+         font-size: 2em;
+      }
+
+      .nav_foot_box {
+      width: auto;
+      height: 125px;
+      background: rgb(200, 200, 200);
+      
+      }
+
+      .nav_foot_box ul {
+         margin: 2.25em 0 0 0;
+      }
+
+      .foot_margin {
+         margin-left: 12em;
+      }
+
+      /*------------- End Site Header ------------*/
+
+
+      /* titles */
+
+      .title {
+         font-size: 2.5em;
+         border-bottom: 3px solid #00aeef;
+      }
+
+      .center {
+         text-align: center;
+      }
+
+      /* _____________________________________
+
+   04. Images
+   _____________________________________ */
+
+   .img-sign {
+      height: 20em;
+      width: 20em;
+      padding-left: 8em;
+      padding-top: 2em;
+   }
+
+   .question {
+      height: 300px;
+      width: 300px;
+   }
+
+   .places_img {
+      height: 226px;
+      width: 300px;
+      margin-top: 15px;
+   }
+
+   .events_img {
+      height: 249px;
+      width: 400px;
+      margin-top: -10px;
+   }
+
+   .weather_icon {
+      height: 150px;
+      width: 150px;
+   }
+
+   .history_img {
+      height: 243px;
+      width: 450px;
+      margin-top: 6em;
+   }
+
+   .old_r_1 {
+      height: 150px;
+      width: 200px;
+   }
+
+   .old_r_2 {
+      height: 150px;
+      width: 169px;
+   }
+   
+/* _____________________________________
+
+   05. Gallery 
+   _____________________________________ */
+
+   .minnow {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      height: 500px;
+      width: 600px;
+   }
+
+   .thompson {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      height: 500px;
+      width: 850px;
+   }
+
+   .skatepark {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      height: 500px;
+      width: 1052px;
+   }
+
+   .sign_old {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      height: 600px;
+      width: 575px;
+   }
+
+   .sign_new {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      height: 600px;
+      width: 532px;
+   }
+
+   .farm {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      height: 600px;
+      width: 1004px;
+   }
+
+   .stMary {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      height: 500px;
+      width: 1303px;
+   }
+
+   .market {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      height: 600px;
+      width: 1102px;
+   }
+
+   .WL_sign {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      height: 600px;
+      width: 888px;
+   }
+
